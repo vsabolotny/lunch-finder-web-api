@@ -13,9 +13,6 @@ http://127.0.0.1:8080/
 
 ### HowTo Develop
 
-##### Checkout Repository
-`git clone git@github.com:EugenGanshorn/foodtruck.git`
-
 #### Install Docker
 Download from https://hub.docker.com/editions/community/docker-ce-desktop-mac/
 or direct link: https://desktop.docker.com/mac/stable/Docker.dmg
