@@ -1,0 +1,81 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+header, footer, #map_canvas {
+    width: 100%;
+}
+
+label.required:before {
+    content: "*";
+}
+
+nav {
+    padding-top: 6rem !important;
+}
+
+label {
+    margin-bottom: 0 !important;
+}
+
+body {
+    font-family: spartan;
+    color: #444;
+}
+
+footer {
+    background-color: #efefee;
+}
+
+.fullHeight {
+    height: 100vh;
+}
+
+.imprint {
+    margin: 1em auto;
+    max-width: 800px;
+}
+
+.feedback {
+    margin: 1em auto;
+    min-width: 400px;
+    max-width: 1024px;
+}
+
+.feedback textarea {
+    min-height: 240px;
+}
+
+#map_canvas {
+    height: 100%;
+}
+
+.jumbotron-img {
+    background: rgb(237,116,88);
+    background: linear-gradient(302deg, rgba(237,116,88,1) 16%, rgba(51,61,81,1) 97%);
+    color: #fff;
+}
+
+.jumbotron {
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+}
+
+.foodtruck-logo img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.foodtruck-tags {
+    max-width: 250px;
+}
+
+.btn-question {
+    color: #FFFFFF;
+    background-color: #ED7458;
+    border-color: #D45B3F;
+}

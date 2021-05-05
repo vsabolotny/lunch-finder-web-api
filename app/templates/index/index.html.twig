@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    {{ google_map(map) }}
+    <input type="hidden" id="GoogleMapsJavascriptVariable" value="{{ infoWindow }}">
+{% endblock %}

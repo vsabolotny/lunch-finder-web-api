@@ -1,0 +1,13 @@
+<p>
+    <strong>{{ foodtruck.getName() }}</strong>
+</p>
+
+{% if foodtruck.getLogoFile() is not same as(null) %}
+    <p class="foodtruck-logo">
+        <img src="{{ vich_uploader_asset(foodtruck) }}" />
+    </p>
+{% endif %}
+
+<p class="foodtruck-tags">
+    {{ foodtruck.getTags()|join(', ') }}
+</p>

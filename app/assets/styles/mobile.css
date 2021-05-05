@@ -1,0 +1,30 @@
+.feedback-mobile,
+.imprint-mobile {
+    padding: 1em;
+    min-width: auto;
+    max-width: none;
+
+    font-size: 3rem;
+}
+
+.feedback-mobile h1,
+.imprint-mobile h1,
+.imprint-mobile h2,
+.imprint-mobile h3,
+.imprint-mobile h4,
+.imprint-mobile h5,
+.imprint-mobile h6 {
+    font-size: 4rem;
+}
+
+.feedback-mobile input,
+.feedback-mobile button {
+    height: 5rem;
+    font-size: 2rem;
+}
+
+.feedback-mobile textarea {
+    height: 5rem;
+    font-size: 2rem;
+    min-height: 400px;
+}
