@@ -1,9 +1,5 @@
 FROM php:fpm
 
-# WORKDIR /var/www/html
-
-# COPY app .
-
 RUN docker-php-ext-install pdo pdo_mysql
 
 RUN pecl install xdebug
