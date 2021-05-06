@@ -23,6 +23,13 @@ services:
         depends_on:
             - php
             - mysql
+        # healthcheck:
+            # test: ["CMD-SHELL", "curl -f http://localhost:8080"]
+            # test: ["CMD", "curl", "-f", "http://localhost:8080"]
+            # interval: 10s
+            # timeout: 10s
+            # retries: 3
+            # start_period: 10s
     nginx:
         build: 
             context: .
@@ -36,9 +43,9 @@ services:
             - php
             - mysql
     yarn:
-        image: node:latest
-        working_dir: /var/www/html
-        command: ['/bin/bash', '-c', 'yarn install && yarn watch']
+        build: 
+            context: .
+            dockerfile: dockerfiles/yarn.dockerfile
         depends_on:
             - php
         volumes:
@@ -52,6 +59,12 @@ services:
             - mysql
         environment:
             ADMINER_DEFAULT_SERVER: 'mysql'
+        # healthcheck:
+        #     test: ["CMD", "curl", "-f", "sleep 30s && http://localhost:8080"]
+        #     interval: 30s
+        #     timeout: 10s
+        #     retries: 3
+        #     start_period: 40s
     postrun:
         build: 
             context: .
@@ -59,6 +72,7 @@ services:
         volumes:
             - ./app:/var/www/html
         depends_on:
-            - composer
-            - php
-            - mysql
+            composer:
+                condition: service_started
+            adminer:
+                condition: service_started

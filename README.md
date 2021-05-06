@@ -1,44 +1,54 @@
-### HowTo Use
-##### Web Frontend
-http://127.0.0.1/
+# Lunch finder
+Welcome to the project https://www.find-a-lunch.de/, which is also called `Lunch Finder`. 
 
-##### Web Backend
-http://127.0.0.1/admin
+Today this is running as prototype, with static data in it. But some day it will be in usage.
 
-##### MySQL
-mysql -h127.0.0.1 -P3307 -udocker -pdocker foodtruck
+Then you will be able to `find active foodtrucks` on your phone in a awesome app.
 
-##### Adminer
-http://127.0.0.1:8080/
+---
+# Development
+For development you will need docker. Install it.
 
-### HowTo Develop
+Clone this project and run
+```
+$ docker-compose up -d
+```
 
-#### Install Docker
-Download from https://hub.docker.com/editions/community/docker-ce-desktop-mac/
-or direct link: https://desktop.docker.com/mac/stable/Docker.dmg
+Because I don't know how to fix it, you'll need to run it twice. Sorry.
 
-#### Start Docker
-just open the Docker UI
+## Applications
+Frontend `localhost`
+Backend `localhost/admin`
+Adminer `localhost:8080`
 
-#### Start Docker Container
-`docker-compose up -d`
+---
+# References
+The compose specification https://github.com/compose-spec/compose-spec/blob/master/spec.md
 
-#### "Cleanup" Docker Container
-`docker-compose down`
+---
+# Some useful commands
 
-`docker volume rm foodtruck_mysqldata`
+## Stop and cleanup
 
-and then follow the instructions in "Start Docker Container"
+Docker compose down with deletion of images, volumes and containers
+```
+$ docker-compose down -v --rmi all --remove-orphans
+```
 
-### Execute UnitTests
-`bin/phpunit`
+Or step by step
+```
+$ docker container prune 
+$ docker volume prune
+$ docker image prune -a
+```
 
-UnitTests are executed automatically at each start of docker container
+Cleanup created files
+```
+$ rm -rf app/node_modules && rm -rf app/vendor && rm -rf mysql && mkdir mysql
+```
 
-### Deployment...
-
-#####...to production
-`bin/console deploy prod`
-
-#####...to staging
-`bin/console deploy staging`
+Or just use the docker-compose-down.sh
+```
+$ chmod +x commands/docker-compose-down.sh
+$ ./docker-compose-down.sh
+```
