@@ -6,7 +6,13 @@ Today this is running as prototype, with static data in it. But some day it will
 Then you will be able to `find active foodtrucks` on your phone in a awesome app.
 
 ---
-# Development
+# Applications
+Frontend `localhost`
+Backend `localhost/admin`
+Adminer `localhost:8080`
+
+---
+# Development with docker-compose
 For development you will need docker. Install it.
 
 Clone this project and run
@@ -16,10 +22,25 @@ $ docker-compose up -d
 
 Because I don't know how to fix it, you'll need to run it twice. Sorry.
 
-## Applications
-Frontend `localhost`
-Backend `localhost/admin`
-Adminer `localhost:8080`
+---
+# Development with docker-compose
+For development you will need minikube. Install it.
+
+Start kubernetes cluster
+```
+$ cd kubernetes
+$ kubectl apply -f=adminer.yaml,mariadb.yaml
+```
+
+Open service you want to talk to in the browser, open the LB or local host
+```
+$ minikube service adminer-service
+```
+
+Stop kubernetes cluster
+```
+$ kubectl delete -f=adminer.yaml,mariadb.yaml
+```
 
 ---
 # References
