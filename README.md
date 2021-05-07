@@ -23,7 +23,7 @@ $ docker-compose up -d
 Because I don't know how to fix it, you'll need to run it twice. Sorry.
 
 ---
-# Development with docker-compose
+# Development with kubernetes cluster
 For development you will need minikube. Install it.
 
 Start kubernetes cluster
