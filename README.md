@@ -20,7 +20,7 @@ Clone this project and run
 $ docker-compose up -d
 ```
 
-Because I don't know how to fix it, you'll need to run it twice. Sorry.
+Because I don't know how to fix it, you'll need to run it twice, down and up. Sorry. :imp: :warning:
 
 ---
 # Development with kubernetes cluster

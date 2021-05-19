@@ -2,7 +2,7 @@
 
 echo "-- starting docker-compose down"
 
-docker-compose down -v --rmi all --remove-orphans
+docker compose down -v --rmi all --remove-orphans
 
 echo "-- cleaning up the files"
 
