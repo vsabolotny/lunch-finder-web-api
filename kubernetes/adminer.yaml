@@ -30,4 +30,4 @@ spec:
           image: adminer
           env:
             - name: ADMINER_DEFAULT_SERVER
-              value: 'mysql'
+              value: 'mariadb-service'

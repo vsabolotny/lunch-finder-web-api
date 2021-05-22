@@ -8,6 +8,14 @@ services:
             - ./env/mysql.env
         volumes:
             - ./mysql:/var/lib/mysql
+    adminer:
+        image: adminer
+        ports:
+            - '8080:8080'
+        depends_on:
+            - mysql
+        environment:
+            ADMINER_DEFAULT_SERVER: 'mysql'
     php:
         build:
             context: .
@@ -50,21 +58,6 @@ services:
             - php
         volumes:
             - ./app:/var/www/html
-    adminer:
-        image: adminer
-        ports:
-            - '8080:8080'
-        depends_on:
-            - php
-            - mysql
-        environment:
-            ADMINER_DEFAULT_SERVER: 'mysql'
-        # healthcheck:
-        #     test: ["CMD", "curl", "-f", "sleep 30s && http://localhost:8080"]
-        #     interval: 30s
-        #     timeout: 10s
-        #     retries: 3
-        #     start_period: 40s
     postrun:
         build: 
             context: .
